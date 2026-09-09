@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Factory Visitor Navigation</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.header {
+    background: #0b3d91;
+    color: white;
+    padding: 22px 18px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header p {
+    margin: 7px 0 0;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.location-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.location-name {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.location-type {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.navigate-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #0b3d91;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navigate-btn:active {
+    transform: scale(0.98);
+}
+
+.note {
+    margin-top: 20px;
+    padding: 14px;
+    background: #fff8df;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="header">
+
+    <h1>Factory Visitor Navigation</h1>
+
+    <p>
+        Navigate to your required location
+    </p>
+
+</div>
+
+
+<div class="container">
+
+
+    <div class="welcome">
+
+        <h2>
+            Where do you want to go?
+        </h2>
+
+        <p>
+            Select your destination below.
+        </p>
+
+    </div>
+
+
+    <!-- MAIN GATE -->
+
+    <div class="location-card">
+
+        <div class="location-name">
+            Main Gate
+        </div>
+
+        <div class="location-type">
+            Factory Entrance
+        </div>
+
+        <button
+            class="navigate-btn"
+            onclick="navigateTo(18.1647778, 73.9379722)">
+
+            Start Navigation
+
+        </button>
+
+    </div>
+
+
+    <!-- WAREHOUSE A -->
+
+    <div class="location-card">
+
+        <div class="location-name">
+            Warehouse A
+        </div>
+
+        <div class="location-type">
+            Warehouse
+        </div>
+
+        <button
+            class="navigate-btn"
+            onclick="navigateTo(18.1638333, 73.9383333)">
+
+            Start Navigation
+
+        </button>
+
+    </div>
+
+
+    <!-- WAREHOUSE B -->
+
+    <div class="location-card">
+
+        <div class="location-name">
+            Warehouse B
+        </div>
+
+        <div class="location-type">
+            Warehouse
+        </div>
+
+        <button
+            class="navigate-btn"
+            onclick="navigateTo(18.1641982, 73.9390775)">
+
+            Start Navigation
+
+        </button>
+
+    </div>
+
+
+    <!-- WAREHOUSE C -->
+
+    <div class="location-card">
+
+        <div class="location-name">
+            Warehouse C
+        </div>
+
+        <div class="location-type">
+            Warehouse
+        </div>
+
+        <button
+            class="navigate-btn"
+            onclick="navigateTo(18.1604167, 73.9380278)">
+
+            Start Navigation
+
+        </button>
+
+    </div>
+
+
+    <!-- WAREHOUSE D -->
+
+    <div class="location-card">
+
+        <div class="location-name">
+            Warehouse D
+        </div>
+
+        <div class="location-type">
+            Warehouse
+        </div>
+
+        <button
+            class="navigate-btn"
+            onclick="navigateTo(18.1599915, 73.9370240)">
+
+            Start Navigation
+
+        </button>
+
+    </div>
+
+
+    <div class="note">
+
+        <b>Navigation:</b>
+        Google Maps will use your phone's current
+        location and provide road navigation to
+        the selected destination.
+
+    </div>
+
+
+</div>
+
+<script>
+
+function navigateTo(latitude, longitude) {
+
+    const destination =
+        latitude + "," + longitude;
+
+    const googleMapsURL =
+        "https://www.google.com/maps/dir/?api=1" +
+        "&destination=" +
+        encodeURIComponent(destination) +
+        "&travelmode=driving" +
+        "&dir_action=navigate";
+
+    window.location.href =
+        googleMapsURL;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
